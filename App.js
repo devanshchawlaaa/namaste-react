@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const parent = React.createElement('div', {id:'parent'}, [
-    React.createElement('div', {id:'child1'}, [
-        React.createElement('h1', {id:'1h1'}, '1h1 dev'),
-        React.createElement('h2', {id:'1h2'}, '1h2')
-    ]),
-    React.createElement('div', {id:'child2'}, [
-        React.createElement('h1', {id:'2h1'}, '2h1'),
-        React.createElement('h2', {id:'2h2'}, '2h2')
-    ])
-])
+const HeadingComp = () => <h1>Namastee</h1>
+const num = 25;
+const TitleComp = (
+    <div>
+        {HeadingComp()}
+        <h1>Devansh {num}</h1>
+        <h2>{console.log('h2')} 7 </h2>
+    </div>
+)
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(parent);
+root.render(TitleComp);
