@@ -2,14 +2,14 @@ import { RESTUARANT_IMAGE } from "./utils/constants";
 
 const RestuarantCard = (props) => {
     const { resData } = props;
-    const { name, cuisine, rating, time } = resData; 
+    const { name, cuisines, avgRating, sla } = resData.info; 
     return (
-        <div className='res-card' style={{ backgroundColor: '#f0f0f0' }}>
+        <div className='res-card'>
             <img className='res-logo' alt='res-logo' src={RESTUARANT_IMAGE} />
             <h3>{name}</h3>
-            <h4>{cuisine}</h4>
-            <h4>{rating} Stars</h4>
-            <h4>{time} Minutes</h4>
+            <h4>{cuisines.join(', ')}</h4>
+            <h4>{avgRating} Stars</h4>
+            <h4>{sla.slaString}</h4>
         </div>
     )
 }
